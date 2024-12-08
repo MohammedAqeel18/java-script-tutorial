@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    background-color: #FD6569;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar h1 {
+    color: white;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book-container {
+    padding: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.book-container:hover {
+    transform: scale(1.05);
+}
+
+.book-container h2, .book-container h5, .book-container p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-container button {
+    background-color: #FD6569;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.book-container button:hover {
+    background-color: #e54b4e;
+}
+
+.add-button {
+    background-color: #FD6569;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+    background-color: #e54b4e;
+}
+
+.popup-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.popup-box {
+    background-color: white;
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    z-index: 2;
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.popup-box h2 {
+    margin-bottom: 20px;
+}
+
+.popup-box input, .popup-box textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-box button {
+    background-color: #FD6569;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.popup-box button:hover {
+    background-color: #e54b4e;
+}

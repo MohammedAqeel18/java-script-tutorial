@@ -1,0 +1,55 @@
+<div id="box"></div>
+<button onclick="change()">Change Color</button>
+<button onclick="set()">Change Width</button>
+<button onclick="red()">Change to Red</button>
+<button onclick="slow()"> Slow </button>
+<button onclick="green()"> Green</button>
+
+<style>
+    div {
+        background-color: black;
+        height: 100px;
+        width: 100px;
+        transition: 2s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .widthmax {
+        width: 1000px;
+    }
+  
+    .widthmin{
+        width:200px;
+    }
+    button {
+        cursor: pointer;
+    }
+
+    :hover{
+        transition:cubic-bezier(0.075, 0.82, 0.165, 1)
+    }
+    </style>
+
+<script>
+    function change() {
+        box.style.backgroundColor = "yellow";
+    }
+
+    function set() {
+        box.setAttribute("class", "widthmax");
+    }
+
+    function red() {
+        box.style.backgroundColor = "red";
+    }
+    function slow ()
+    {
+        box.setAttribute("class", "widthmin")
+    }
+
+    function green(){
+        box.style.backgroundColor="Green"
+    }
+
+  
+</script>

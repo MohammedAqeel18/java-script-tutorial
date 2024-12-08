@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Form</h1>
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age"><br><br>
+    <label for="accountNumber">Account Number:</label>
+    <input type="text" id="accountNumber"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password"><br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date">
+    <br><br>
+    <button type="button" onclick="saveData()">Save</button>
+</form>
+<br><br><br>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Account Number</th>
+            <th>Password</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Table rows go here -->
+    </tbody>
+</table>
+
+<script>
+    function saveData() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const accountNumber = document.getElementById('accountNumber').value;
+        const password = document.getElementById('password').value;
+        const date = document.getElementById('date').value;
+
+        if (name && age && accountNumber && password && date) {
+            const tableBody = document.getElementById('tableBody');
+            const row = tableBody.insertRow();
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${age}</td>
+                <td>${accountNumber}</td>
+                <td>${password}</td>
+                <td>${date}</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            `;
+
+            document.getElementById('myForm').reset();
+        } else {
+            alert('Please fill out all fields.');
+        }
+    }
+
+    function deleteRow(button) {
+        const row = button.parentElement.parentElement;
+        row.remove();
+    }
+</script>
+</body>
+</html>
